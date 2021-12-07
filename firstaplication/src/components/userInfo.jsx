@@ -6,8 +6,7 @@ const UserInfo = (user, handleDelete) => {
       <td>{user.name}</td>
       <td>
         {user.qualities.map((quality) => {
-          let classes = "badge bg-";
-          classes += quality.color;
+          const classes = "badge bg-" + quality.color;
           return (
             <span key={quality._id} className={classes}>
               {quality.name}
