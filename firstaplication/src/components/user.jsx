@@ -1,6 +1,7 @@
-import React from "react";
-import BookMark from "./bookmark";
-import Qualitie from "./qualitie";
+import React from 'react'
+import BookMark from './bookmark'
+import Qualitie from './qualitie'
+import PropTypes from 'prop-types'
 
 const User = ({ user, ...rest }) => {
   return (
@@ -32,7 +33,11 @@ const User = ({ user, ...rest }) => {
         </td>
       </tr>
     </>
-  );
-};
+  )
+}
 
-export default User;
+User.propTypes = {
+  user: PropTypes.object.isRequired
+}
+
+export default User
