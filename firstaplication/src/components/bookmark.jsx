@@ -5,7 +5,7 @@ const BookMark = ({ _id, status, onToggleBookMark }) => {
     <>
       <button onClick={() => onToggleBookMark(_id)}>
         {status ? (
-          <i class="bi bi-bookmark-fill"></i>
+          <i className="bi bi-bookmark-fill"></i>
         ) : (
           <i className="bi bi-bookmark"></i>
         )}
