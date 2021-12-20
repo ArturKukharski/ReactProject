@@ -1,14 +1,11 @@
 import React from "react";
 
 const BookMark = ({ _id, status, onToggleBookMark }) => {
+  const classes = status ? "bi bi-bookmark-fill" : "bi bi-bookmark";
   return (
     <>
       <button onClick={() => onToggleBookMark(_id)}>
-        {status ? (
-          <i className="bi bi-bookmark-fill"></i>
-        ) : (
-          <i className="bi bi-bookmark"></i>
-        )}
+        <i className={classes}></i>
       </button>
     </>
   );
