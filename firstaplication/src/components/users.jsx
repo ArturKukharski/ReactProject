@@ -6,6 +6,7 @@ import api from '../api'
 import { paginate } from '../utils/paginate'
 import PropTypes from 'prop-types'
 import GroupList from './groupList'
+import _ from 'lodash'
 
 const Users = ({ users: allUsers, ...rest }) => {
   const pageSize = 4
@@ -16,6 +17,7 @@ const Users = ({ users: allUsers, ...rest }) => {
   useEffect(() => {
     api.professions.fetchAll().then((data) => setProfessions(data))
   }, [])
+
   useEffect(() => {
     setCurrentPage(1)
   }, [selectedProf])
@@ -29,8 +31,9 @@ const Users = ({ users: allUsers, ...rest }) => {
   }
 
   const filterUsers = selectedProf
-    ? allUsers.filter((user) => user.profession === selectedProf)
+    ? allUsers.filter((user) => _.isEqual(user.profession, selectedProf))
     : allUsers
+
   const count = filterUsers.length
   const userCrop = paginate(filterUsers, currentPage, pageSize)
   const clearFilter = () => {
