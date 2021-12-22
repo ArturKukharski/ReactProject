@@ -3,7 +3,6 @@ import Pagination from './pagination'
 import SearchStatus from './searchStatus'
 import api from '../api'
 import { paginate } from '../utils/paginate'
-import PropTypes from 'prop-types'
 import GroupList from './groupList'
 import _ from 'lodash'
 import UserTable from './usersTable'
@@ -102,10 +101,6 @@ const Users = () => {
       </div>
     )
   } else return <strong>Loading...</strong>
-}
-
-Users.propTypes = {
-  users: PropTypes.array.isRequired
 }
 
 export default Users
