@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
+    curly: ["error", "multi-or-nest"],
     "space-before-function-paren": [
       "error",
       { anonymous: "always", named: "never" },
